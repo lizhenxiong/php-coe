@@ -1,0 +1,69 @@
+面向对象
+
+table：resource_permission
+
+plan1:
+id,targetId,targetType,rule
+plan2:
+id, targetId, targetType, rule
+
+child table:
+look_permission: permissionId, targetId, targetType
+join_permission: permissionId, targetId, targetType
+comment_permission: 
+required_permission: 
+
+example: course
+
+targetId: courseId
+targetType: course
+rule(json)
+'look': 'userId: 1, postId: 2, userGroupId: 3, roleId: 4',
+'join': ...,
+'comment': ...,
+'required': ...,
+
+
+when: search course list
+
+courses = searchCourses();
+
+currentUser => (userId, postId, userGroupId, roleId)
+
+page 20
+
+judge => visable(true/false)
+
+code:
+$result = false;
+if ($coursePermission['rule']['look']) {
+  
+  if (in_array($userId, $coursePermission['rule']['look']['userId'])) {
+    $result = true;
+  }
+
+  if (in_array($postId, $coursePermission['rule']['look']['postId'])) {
+    $result = true;
+  }
+
+  ....
+
+  ....
+
+} else {
+  $result = true;
+}
+
+when: look course detail
+
+course = getCourse
+
+currentUser => (userId, postId, userGroupId, roleId)
+
+judge => message(can not look)
+
+code:
+
+.....
+
+when: join
