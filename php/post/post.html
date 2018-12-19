@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var a = {"a": "哈哈 哈"};
+        var as = JSON.stringify(a);
+        
+        var input = document.getElementById('texttest');
+        
+    </script>
+</head>
+<body>
+    <form id='post-form' action="post.php" method="post">
+        <input type="text" name="questions[3]" value="2222">
+        <input type="text" name="questions[4]" value="1111">
+        <input type="checkbox" name="abc" value="99">
+        <input type="radio" name="baci">
+        <input type="radio" name="baci">
+        <input type="radio" name="baci">
+        <input type="radio" name="baci">
+        <input type="radio" name="baci">
+        <input type="file" name="file1">
+        <input type="text" id="texttest" value="">
+        <button id="post-submit" type="submit">tjiao</button>
+    </form>
+</body>
+</html>

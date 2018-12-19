@@ -1,0 +1,12 @@
+{
+    "name": "lizhenxiong/php-coe",
+    "authors": [
+        {
+            "name": "lizhenxiong",
+            "email": "lizhenxiong@howzhi.com"
+        }
+    ],
+    "require": {
+        "baum/baum": "~1.1"
+    }
+}
